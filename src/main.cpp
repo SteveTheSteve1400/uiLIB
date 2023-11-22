@@ -1,5 +1,5 @@
 #include "main.h"
-#include "uiLIB/fileManager.h"
+
 
 /**
  * A callback function for LLEMU's center button.
@@ -18,7 +18,7 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pcfs_init();
+	
 }
 
 /**
