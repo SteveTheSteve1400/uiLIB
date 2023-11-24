@@ -3,7 +3,8 @@
 #include "liblvgl/core/lv_obj.h"
 #include "liblvgl/misc/lv_color.h"
 
-void rd::PIDView::eventHandler( lv_obj_t * obj,lv_event_t * event){
+void rd::PIDView::eventHandler(lv_event_t * event){
+    lv_obj_t * obj = lv_event_get_target(event);
     lv_event_code_t code = lv_event_get_code(event);
     if(code == LV_EVENT_CLICKED){
         if(obj == imgButtonPDec){

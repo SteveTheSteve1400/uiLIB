@@ -11,9 +11,9 @@ namespace rd{
             rd_view_t *view;
 
             //PID vars
-            float kP;
-            float kI;
-            float kD;
+            static float kP;
+            static float kI;
+            static float kD;
 
             //chart
             lv_obj_t * chart;
@@ -34,12 +34,12 @@ namespace rd{
             //still buttons
             lv_obj_t * imgbuttonType;//added to label later
 
-            lv_obj_t * imgButtonPDec;
-            lv_obj_t * imgButtonPInc;
-            lv_obj_t * imgButtonIDec;
-            lv_obj_t * imgButtonIInc;
-            lv_obj_t * imgButtonDDec;
-            lv_obj_t * imgButtonDInc;
+            static lv_obj_t * imgButtonPDec;
+            static lv_obj_t * imgButtonPInc;
+            static lv_obj_t * imgButtonIDec;
+            static lv_obj_t * imgButtonIInc;
+            static lv_obj_t * imgButtonDDec;
+            static lv_obj_t * imgButtonDInc;
 
             //changing labels
             lv_obj_t * labelPVar;
@@ -52,7 +52,7 @@ namespace rd{
             void focus();
             
             //event handler
-            void eventHandler( lv_obj_t * obj, lv_event_t * event);
+            static void eventHandler(lv_event_t * event);
             
             //updates
             void updateFromSD(float kP, float kI, float kD);
