@@ -2,7 +2,7 @@
 // @Brief: Odometry view implementation
 // @Credit: Using Robodash's View, also partially using Lemlib's Pose functions
 // @Description: Image of field, robot that updates position, and stats of robot's pose on the right
-#include "uiLIB/views/odom.hpp"
+#include "uiLIB/views/odomView.hpp"
 #include "liblvgl/core/lv_obj_pos.h"
 #include "liblvgl/widgets/lv_img.h"
 #include "liblvgl/widgets/lv_label.h"

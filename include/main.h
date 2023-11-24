@@ -40,7 +40,10 @@
  * You should add more #includes here
  */
 //#include "okapi/api.hpp"
-#include "uiLIB/views/odom.hpp"
+#include "uiLIB/assets/setup.hpp"
+#include "uiLIB/views/odomView.hpp"
+#include "uiLIB/views/pidView.hpp"
+
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
