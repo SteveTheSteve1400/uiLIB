@@ -4,9 +4,12 @@
 #include "lemlib/chassis/differential.hpp"
 #include "lemlib/logger/stdout.hpp"
 #include "pros/misc.h"
+#include "uiLIB/views/odomView.hpp"
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
 
+rd::OdomView odomView;
+rd::imageTest imageTest;
 // motor groups
 // left motors on ports 8, 20, and 19. Motors on ports 8 and 20 are reversed. Using blue gearbox
 auto leftMotors = lemlib::makeMotorGroup({-8, -20, 19}, pros::v5::MotorGears::blue);
@@ -114,8 +117,9 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
 
+}
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -136,7 +140,7 @@ void opcontrol() {
 	pros::MotorGroup right_mg({-4,5,-6}); // Creates a motor group with forwards port 4 and reversed ports 4 & 6
 
 	while (true) {
-		 
+        std::cout <<"hi";
 		// Arcade control scheme
 		int dir = master.get_analog(ANALOG_LEFT_Y); // Gets amount forward/backward from left joystick
 		int turn = master.get_analog(ANALOG_RIGHT_X); // Gets the turn left/right from right joystick

@@ -2,6 +2,8 @@
 #include "robodash/views/image.hpp"
 #include <string>
 #include <sys/types.h>
+#include "lemlib/chassis/chassis.hpp"
+#include "lemlib/chassis/differential.hpp"
 #pragma once
 
 namespace rd{
@@ -24,7 +26,13 @@ namespace rd{
             bool isConnected;
             bool isAuton;
             bool isDisabled;
+            //Styles
 
+            lv_style_t styleTitle;
+            lv_style_t styleLabel;
+            lv_style_t styleLine;
+
+            lv_style_t styleLabelVar;
             //Images
             lv_obj_t * field;
             lv_obj_t * robot;
@@ -48,14 +56,15 @@ namespace rd{
             lv_obj_t * timerVarMin;
             lv_obj_t * timerVarSec;
 
-
+            //lines
+            lv_obj_t * line1;
 
             
             
         public:
             OdomView();
             void focus();//focuses page to view
-            void update(float posX, float posY, float posTheta);//updates pose
+            void update(lemlib::Differential* chassis);//updates pose
             void updateLabels();//updates labels
             void updateImage();//updates image of robot
             void updateState();//updates stateimages of robot

@@ -1,63 +1,85 @@
-#include "liblvgl/core/lv_obj.h"
-#include "robodash/api.h"
-#include "robodash/views/image.hpp"
-#include <string>
-#include <sys/types.h>
-#pragma once
+// #include "liblvgl/core/lv_obj.h"
+// #include "robodash/api.h"
+// #include "robodash/views/image.hpp"
+// #include <string>
+// #include <sys/types.h>
+// #pragma once
 
-namespace rd{
-    class PIDView{
-        private:
-            rd_view_t *view;
+// typedef  FILE * pc_file_t;
 
-            //PID vars
-            static float kP;
-            static float kI;
-            static float kD;
 
-            //chart
-            lv_obj_t * chart;
+// namespace rd{
+//     class PIDView{
+//         private:
+//             rd_view_t *view;
 
-            //chart series
-            lv_chart_series_t * seriesP;
-            lv_chart_series_t * seriesD;
-
-            lv_chart_series_t * seriesTarg;
-            lv_chart_series_t * seriesCur;
-
-            //still labels
-            lv_obj_t * labelTitle;//added to button later
-            lv_obj_t * labelP;
-            lv_obj_t * labelI;
-            lv_obj_t * labelD;
-
-            //still buttons
-            lv_obj_t * imgbuttonType;//added to label later
-
-            static lv_obj_t * imgButtonPDec;
-            static lv_obj_t * imgButtonPInc;
-            static lv_obj_t * imgButtonIDec;
-            static lv_obj_t * imgButtonIInc;
-            static lv_obj_t * imgButtonDDec;
-            static lv_obj_t * imgButtonDInc;
-
-            //changing labels
-            lv_obj_t * labelPVar;
-            lv_obj_t * labelIVar;
-            lv_obj_t * labelDVar;
-
-        public:
-            //rd functions
-            PIDView();
-            void focus();
+//             //PID vars
+//             static float kP;
+//             static float kI;
+//             static float kD;
             
-            //event handler
-            static void eventHandler(lv_event_t * event);
+//             //PID type
+//             static std::string type;
             
-            //updates
-            void updateFromSD(float kP, float kI, float kD);
-            void updateLabels();
-            void updateChart(float P, float D, float target, float current);
+//             //chart
+//             lv_obj_t * chart;
 
-    };
-}
+//             //chart series
+//             lv_chart_series_t * seriesP;
+//             lv_chart_series_t * seriesD;
+
+//             lv_chart_series_t * seriesTarg;
+//             lv_chart_series_t * seriesCur;
+
+//             //still labels
+//             lv_obj_t * labelTitle;
+//             lv_obj_t * labelType;
+//             lv_obj_t * labelP;
+//             lv_obj_t * labelI;
+//             lv_obj_t * labelD;
+
+//             //still buttons
+//             lv_obj_t * buttonType;//added to label later
+
+//             //big PID tuning buttons
+//             static lv_obj_t * imgButtonPDecBig;
+//             static lv_obj_t * imgButtonPIncBig;
+//             static lv_obj_t * imgButtonIDecBig;
+//             static lv_obj_t * imgButtonIIncBig;
+//             static lv_obj_t * imgButtonDDecBig;
+//             static lv_obj_t * imgButtonDIncBig;
+
+//             //small PID tuning buttons
+//             static lv_obj_t * imgButtonPDecSmall;
+//             static lv_obj_t * imgButtonPIncSmall;
+//             static lv_obj_t * imgButtonIDecSmall;
+//             static lv_obj_t * imgButtonIIncSmall;
+//             static lv_obj_t * imgButtonDDecSmall;
+//             static lv_obj_t * imgButtonDIncSmall;
+            
+        
+
+//             //changing labels
+//             lv_obj_t * labelPVar;
+//             lv_obj_t * labelIVar;
+//             lv_obj_t * labelDVar;
+
+//         public:
+//             //rd functions
+//             PIDView();
+//             void focus();
+            
+//             //event handler
+//             static void eventHandlerBigTune(lv_event_t * event);
+//             static void eventHandlerSmallTune(lv_event_t * event);
+//             static void eventHandlerType(lv_event_t * event);
+//             //updates
+//             void makeBigTune();//make big PID button
+//             void makeSmallTune();//make small PID button
+//             void initValues(float * P, float *  I, float * D); 
+//             void updateFromSD(float kP, float kI, float kD);
+//             void updateLabels();
+//             void updateChart(float P, float D, float target, float current);
+
+//     };
+// }

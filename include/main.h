@@ -43,6 +43,8 @@
 #include "uiLIB/assets/setup.hpp"
 #include "uiLIB/views/odomView.hpp"
 #include "uiLIB/views/pidView.hpp"
+#include "uiLIB/views/imageTest.hpp"
+
 
 
 /**
@@ -65,6 +67,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+extern float kPP,kII,kDD;
 void autonomous(void);
 void initialize(void);
 void disabled(void);
